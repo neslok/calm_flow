@@ -1,0 +1,18 @@
+#!/bin/sh
+
+
+sudo apt install -y tasksel
+sudo tasksel install samba-server
+
+sudo mv /etc/samba/smb.conf /etc/samba/smb.conf.orig
+sudo git clone https://github.com/neslok/calm_flow.git
+sudo mv calm_flow/smb.conf /etc/samba/smb.conf
+
+sudo mkdir -p /mnt/samba/public
+sudo chmod 777 /mnt/samba/public/
+
+sudo systemctl restart smbd
+
+sudo apt install -y nfs-common
+
+sudo mount -t nfs 192.168.1.93:/mnt/nfs_share /mnt/samba/public/
