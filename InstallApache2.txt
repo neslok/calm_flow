@@ -1,0 +1,10 @@
+#!/bin/sh
+
+sudo git clone https://github.com/neslok/calm_flow.git
+
+sudo apt install -y apache2
+sudo apt install -y cifs-utils
+
+sleep 1m
+
+sudo mount -t cifs -o guest //192.168.1.92/public /var/www/html
