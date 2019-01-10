@@ -7,4 +7,4 @@ sudo apt install -y cifs-utils
 
 sleep 1m
 
-sudo mount -t cifs -o guest //@@{app.address}@@/public /var/www/html
+sudo mount -t cifs -o guest //@@{appserver.address}@@/public /var/www/html
