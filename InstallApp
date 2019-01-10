@@ -15,4 +15,4 @@ sudo systemctl restart smbd
 
 sudo apt install -y nfs-common
 
-sudo mount -t nfs 192.168.1.93:/mnt/nfs_share /mnt/samba/public/
+sudo mount -t nfs @@{DB.address}@@:/mnt/nfs_share /mnt/samba/public/
