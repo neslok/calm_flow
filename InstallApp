@@ -15,6 +15,8 @@ sudo systemctl restart smbd
 
 sudo apt install -y nfs-common
 
+sudo mount -t nfs $dbIP:/mnt/nfs_share /mnt/samba/public/
+
 sleep 1m
 
 
