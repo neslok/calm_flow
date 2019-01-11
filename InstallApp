@@ -17,7 +17,7 @@ sudo apt install -y nfs-common
 
 ##sudo mount -t nfs $dbIP:/mnt/nfs_share /mnt/samba/public/
 
-##sudo sed -i '$ a \n ## nfs mount \n \n $dbIP:/mnt/nfs_share     /samba/public   nfs defaults    0 0' /etc/fstab
+##sudo sed -i '$ a ## nfs mount \n $dbIP:/mnt/nfs_share     /samba/public   nfs defaults    0 0' /etc/fstab
 
 sleep 1m
 
