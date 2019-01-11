@@ -12,7 +12,6 @@ sudo mv /etc/vsftpd.conf /etc/vsftpd.conf.orig
 sudo mv calm_flow/vsftpd.conf /etc/vsftpd.conf
 sudo systemctl restart vsftpd
 
-
-##sudo sed -i '$ a \n /mnt/nfs_share  *(rw,sync,no_root_squash,no_subtree_check)' /etc/exports
+sudo sed -i '$ a /mnt/nfs_share  *(rw,sync,no_root_squash,no_subtree_check)' /etc/exports
 
 sudo systemctl restart nfs-kernel-server
