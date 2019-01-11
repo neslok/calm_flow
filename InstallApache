@@ -5,8 +5,4 @@ sudo git clone https://github.com/neslok/calm_flow.git
 sudo apt install -y apache2
 sudo apt install -y cifs-utils
 
-sudo mount -t cifs -o guest //$appIP/public/ /var/www/html/
-
-sudo sed -i '$ a ## cifs mount \n \n //$appIP/public   /var/www/html   cifs guest,uid=1000     0 0' /etc/fstab
-
 sleep 1m
