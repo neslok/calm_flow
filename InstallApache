@@ -5,6 +5,6 @@ sudo git clone https://github.com/neslok/calm_flow.git
 sudo apt install -y apache2
 sudo apt install -y cifs-utils
 
-echo webname >> hostname
+sudo mount -t cifs -o guest //$appIP/public/ /var/www/html/
 
 sleep 1m
