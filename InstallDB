@@ -7,8 +7,8 @@ sudo chmod 777 /mnt/nfs_share/
 sudo mv calm_flow/index.html /mnt/nfs_share
 
 sudo apt install -y vsftpd
-sudo mv /etc/vsftpd.conf /etc/vsftpd.conf.orig
-sudo mv calm_flow/vsftpd.conf /etc/vsftpd.conf
+sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.orig
+sudo cp /home/ntnxuser/calm_flow/vsftpd.conf /etc/vsftpd.conf
 sudo systemctl restart vsftpd
 
 sudo sed -i '$ a /mnt/nfs_share  *(rw,sync,no_root_squash,no_subtree_check)' /etc/exports
