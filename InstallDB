@@ -4,7 +4,6 @@ sudo apt install -y nfs-kernel-server
 sudo mkdir -p /mnt/nfs_share
 sudo chmod 777 /mnt/nfs_share/
 
-sudo git clone https://github.com/neslok/calm_flow.git
 sudo mv calm_flow/index.html /mnt/nfs_share
 
 sudo apt install -y vsftpd
