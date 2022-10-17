@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sudo git clone https://github.com/neslok/calm_flow.git
+#sudo git clone https://github.com/neslok/calm_flow.git
 
 #sudo apt install -y apache2
 #sudo apt install -y cifs-utils
