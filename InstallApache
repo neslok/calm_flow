@@ -2,8 +2,13 @@
 
 sudo git clone https://github.com/neslok/calm_flow.git
 
-sudo apt install -y apache2
-sudo apt install -y cifs-utils
+#sudo apt install -y apache2
+#sudo apt install -y cifs-utils
+
+sudo yum install -y httpd
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --permanent --add-service=https
+sudo firewall-cmd --reload
 
 #sudo mount -t cifs -o guest //$appIP/public/ /var/www/html/
 
