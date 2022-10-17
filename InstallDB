@@ -1,16 +1,20 @@
 #!/bin/sh
 
-sudo apt install -y nfs-kernel-server
+#sudo apt install -y nfs-kernel-server ## for ubuntu
+sudo yum install -y nfs-utils ## for Centos
 sudo mkdir -p /mnt/nfs_share
 sudo chmod 777 /mnt/nfs_share/
 
 sudo mv calm_flow/index.html /mnt/nfs_share
 
-sudo apt install -y vsftpd
-sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.orig
-sudo cp /home/ntnxuser/calm_flow/vsftpd.conf /etc/vsftpd.conf
+#sudo apt install -y vsftpd
+sudo yum install -y vsftpd
+sudo cp /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.orig
+sudo cp /home/ntnxuser/calm_flow/vsftpd.conf /etc/vsftpd/vsftpd.conf
 sudo systemctl restart vsftpd
 
-sudo sed -i '$ a /mnt/nfs_share  *(rw,sync,no_root_squash,no_subtree_check)' /etc/exports
-
-sudo systemctl restart nfs-kernel-server
+#sudo sed -i '$ a /mnt/nfs_share  *(rw,sync,no_root_squash,no_subtree_check)' /etc/exports ## for ubuntu
+sudo sh -c 'echo "/mnt/nfs_share  *(rw,sync,no_root_squash,no_subtree_check)" > /etc/exports' ##for centos
+ 
+#sudo systemctl restart nfs-kernel-server
+sudo systemctl restart nfs-utils
