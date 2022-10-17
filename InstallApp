@@ -1,8 +1,10 @@
 #!/bin/sh
 
 
-sudo apt install -y tasksel
-sudo tasksel install samba-server
+#sudo apt install -y tasksel
+#sudo tasksel install samba-server
+
+sudo yum install -y samba samba-client
 
 sudo mv /etc/samba/smb.conf /etc/samba/smb.conf.orig
 sudo git clone https://github.com/neslok/calm_flow.git
@@ -11,9 +13,14 @@ sudo mv calm_flow/smb.conf /etc/samba/smb.conf
 sudo mkdir -p /mnt/samba/public
 sudo chmod 777 /mnt/samba/public/
 
-sudo systemctl restart smbd
+#sudo systemctl restart smbd
 
-sudo apt install -y nfs-common
+sudo systemctl start smb.service
+sudo systemctl start nmb.service
+
+#sudo apt install -y nfs-common
+
+sudo yum install -y nfs-utils
 
 ##sudo mount -t nfs $dbIP:/mnt/nfs_share /mnt/samba/public/
 
