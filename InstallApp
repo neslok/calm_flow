@@ -19,6 +19,8 @@ sudo firewall-cmd --permanent --zone=public --add-service=samba
 sudo firewall-cmd --zone=public --add-service=samba
 sudo firewall-cmd --reload
 
+sudo setenforce 0
+
 sudo systemctl start smb.service
 sudo systemctl start nmb.service
 
