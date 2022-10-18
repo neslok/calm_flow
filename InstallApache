@@ -8,9 +8,12 @@
 setenforce 0
 
 sudo yum install -y httpd
+sudo yum install - cifs-utils
+
 sudo firewall-cmd --permanent --add-service=http
 sudo firewall-cmd --permanent --add-service=https
 sudo firewall-cmd --reload
+
 
 #sudo mount -t cifs -o guest //$appIP/public/ /var/www/html/
 
